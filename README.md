@@ -11,7 +11,7 @@ flutter run
 
 ## Android
 
-This project now includes Android platform files.
+This project includes Android platform files.
 
 ```bash
 flutter pub get
@@ -53,3 +53,25 @@ Revise inflation theory for 1 hour
 - Graph System with concept nodes, relationship edges, dependency/cause queries, and task-to-concept links.
 - Intelligence Layer with task pattern analysis, best-time suggestions, priority recommendations, and in-app smart reminders.
 - Dark mode, system theme support, high contrast, adjustable text size, reduced motion, larger touch targets, and Android platform support.
+
+## Mini AI cognitive foundation (in progress)
+
+The feat/mini-ai-cognitive-foundation branch introduces the first isolated core for the Mini AI vision:
+
+- lib/core/experience.dart: compact experience/outcome records with JSON serialization.
+- lib/core/cognitive_controller.dart: PASS-inspired stage labels, safe candidate filtering, utility ranking, and experience-derived strategy priors.
+- test/core/cognitive_controller_test.dart: tests for safety filtering, empty safe choices, experience-driven ranking, and bounded memory.
+- docs/mini_ai_architecture.md: architecture, staged learning plan, and safety gates.
+
+### Current learning boundary
+
+The first milestone adapts **strategy/policy preferences** from observed outcomes. It does not yet train neural language-model weights. Neural-weight adaptation is a later research stage requiring a replay buffer, a training-capable runtime, held-out evaluation, regression checks, versioned checkpoints, and rollback. The core is designed to run offline and remain independent of any model provider.
+
+### First verification command
+
+```bash
+flutter pub get
+flutter test test/core/cognitive_controller_test.dart
+```
+
+This branch is a proposal for review; merge only after running the tests in a Flutter environment.
